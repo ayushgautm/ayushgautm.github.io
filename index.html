@@ -13,17 +13,36 @@
       align-items: center;
       height: 100vh;
     }
-    img {
+
+    .desktop-img, .mobile-img {
       max-width: 100%;
       max-height: 100%;
       width: auto;
       height: auto;
+      display: none;
+    }
+
+    /* Show desktop image by default */
+    .desktop-img {
       display: block;
+    }
+
+    /* When screen width is 768px or less, show mobile image instead */
+    @media screen and (max-width: 768px) {
+      .desktop-img {
+        display: none;
+      }
+      .mobile-img {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
-  <img src="assets/img/Temporary.jpg" alt="Coming Soon">
+  <!-- Desktop image -->
+  <img src="assets/img/Temporary.jpg" alt="Coming Soon" class="desktop-img">
+  
+  <!-- Mobile-optimized image -->
+  <img src="assets/img/Temporary-mobile.jpg" alt="Coming Soon Mobile View" class="mobile-img">
 </body>
 </html>
-
